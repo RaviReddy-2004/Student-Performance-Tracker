@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #74ebd5, #ACB6E5);
+      text-align: center;
+      padding: 30px;
+    }
+    h2 {
+      color: #333;
+    }
+    form {
+      background: rgb(55, 112, 135);
+      padding: 20px;
+      margin: 20px auto;
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    }
+    input, button {
+      margin: 10px 0;
+      padding: 8px;
+      width: 90%;
+      border-radius: 5px;
+      border: 1px solid #3aa45f;
+    }
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>📘 Student Tracker</h1>
+
+  <h2>Add Student</h2>
+  <form action="/add_student" method="post">
+    Roll: <input name="roll" type="number" required><br>
+    Name: <input name="name" type="text" required><br>
+    <button type="submit">Add</button>
+  </form>
+
+  <h2>Add Grade</h2>
+  <form action="/add_grade" method="post">
+    Roll: <input name="roll" type="number" required><br>
+    Subject: <input name="subject" type="text" required><br>
+    Grade: <input name="grade" type="number" required><br>
+    <button type="submit">Add</button>
+  </form>
+
+  <h2>View Student</h2>
+  <form action="/view" method="post">
+    Roll: <input name="roll" type="number" required><br>
+    <button type="submit">View Student</button>
+  </form>
+
+  <h2>Check Average</h2>
+  <form action="/average" method="post">
+    Roll: <input name="roll" type="number" required><br>
+    <button type="submit">Check Average</button>
+  </form>
+</body>
+</html>

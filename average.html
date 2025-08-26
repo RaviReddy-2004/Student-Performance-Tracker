@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Average</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      padding: 30px;
+      text-align: center;
+    }
+    table {
+      margin: 20px auto;
+      border-collapse: collapse;
+      width: 60%;
+      background: white;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background: #007bff;
+      color: white;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #007bff;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Student Average</h1>
+
+  <table>
+    <tr>
+      <th>Roll</th>
+      <td>{{ student.roll }}</td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <td>{{ student.name }}</td>
+    </tr>
+  </table>
+
+  <h2>Marks</h2>
+  <table>
+    <tr>
+      <th>Subject</th>
+      <th>Grade</th>
+    </tr>
+    {% for subject, grade in student.grades.items() %}
+    <tr>
+      <td>{{ subject }}</td>
+      <td>{{ grade }}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <th>📊 Average</th>
+      <td class="highlight">{{ avg|round(2) }}</td>
+    </tr>
+  </table>
+
+  <a href="/">⬅ Back to Home</a>
+</body>
+</html>
+
